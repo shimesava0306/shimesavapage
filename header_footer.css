@@ -1,0 +1,220 @@
+ul,li,a{
+  text-decoration: none;
+  list-style: none;
+}
+
+body{
+  background:#000000;
+}
+
+@font-face { 
+  font-family: "myfont"; 
+  src: url("Gemstone.ttf") format("truetype") 
+}
+
+/*header*/
+header{
+  height:120px;
+  position: sticky;
+  top: 0;
+  z-index:999;
+  background-color:#000000;
+  margin-bottom:20px;
+}
+
+.header_title img{
+  height:75%;
+  width:75%;
+}
+
+nav{
+  display:flex;
+}
+
+.header_inner{
+  margin:0 1%;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.header_category li{
+  margin:0 10px;
+  font-size:25px;
+  padding:45px 20px;
+  text-align:center;
+  vertical-align:middle;
+  font-family:"myfont";
+  letter-spacing: 2px;
+}
+
+.header_category ul{
+  display:flex;
+}
+
+.header_category a{
+  color:#FFFFFF;
+}
+
+
+.header_category a:hover{
+  color:#ffbb00;
+}
+
+.tel_number{
+  display:none;
+}
+
+.top{
+  display:none
+}
+
+@media (max-width:1200px){
+/*ハンバーガーメニューボタン*/
+  nav {
+      display: block;
+      width: 300px;
+      position: fixed;
+      background-color:#333333;
+      top: 0;
+      right: -300px;
+      bottom: 0;
+      transition: all 0.5s;
+      z-index: 3;
+      opacity: 0;
+      overflow-y: scroll;
+      overflow-x: hidden;
+  }
+
+  .open nav {
+      right: 0;
+      opacity: 1;
+  }
+
+  nav::-webkit-scrollbar {
+      width: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+      background-color: #474747;
+      border-radius:15px;
+  }
+
+  .toggle_button{
+      display: block;
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      width: 30px;
+      height: 30px;
+      z-index: 3;
+      cursor: pointer;
+      margin-top: 10px;
+  }
+  
+  .toggle_button span {
+      position: absolute;
+      display: block;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color:#FFFFFF;
+      transition: all 0.5s;
+      border-radius: 4px;
+  }
+  
+
+  .open #mask {
+      display: block;
+      background-color: black;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      position: fixed;
+      opacity: 0.8;
+      cursor: pointer;
+  }
+
+  .header_category ul{
+      display:block;
+      margin-top:100px;
+  }
+
+  .header_category li{
+      text-align:left;
+      padding:30px 20px;
+  }
+
+  .header_category a:hover{
+      color:#be0101;
+  }
+
+  .header_category li:hover{
+      transform:translateX(20px);
+      transition:all 0.5s;
+  }
+
+  .toggle_button span:nth-child(1) {
+      top: 4px;
+  }
+  
+  .toggle_button span:nth-child(2) {
+      top: 14px;
+  }
+  
+  .toggle_button span:nth-child(3) {
+      bottom: 4px;
+  }
+
+  .open .toggle_button span:nth-child(1) {
+      transform: translateY(10px) rotate(-315deg);
+  }  
+  
+  .open .toggle_button span:nth-child(2) {
+      opacity: 0;
+  }
+  
+  .open .toggle_button span:nth-child(3) {
+      transform: translateY(-10px) rotate(315deg);
+  }
+  
+  .top{
+      display:block;
+  }
+
+  .tel_number{
+      display:block;
+      text-align:center;
+      font-size:22px;
+      color:#333333;
+      line-height:30px;
+      margin-bottom:30px;
+  }
+
+  .tel_number img{
+      height:120px;
+      width:120px;
+      margin:180px 0 30px 0;
+  }
+
+  .header_title img{
+      padding:15px 0;
+  }
+}
+
+@media(max-width:540px){
+  header{
+      height:80px;
+  }
+
+  .header_title img{
+      height:75px;
+      width:250px;
+      padding-top:15px;
+  }
+
+  .toggle_button{
+    top:13px;
+  }
+}
